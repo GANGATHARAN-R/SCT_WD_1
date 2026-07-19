@@ -1,0 +1,433 @@
+/* ===== RESET ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  scroll-behavior: smooth;
+  color: #1a1a2e;
+}
+
+/* ===== FIXED NAVBAR ===== */
+.navbar {
+  position: fixed;       /* stays visible on all pages/sections */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background:#1a1a2e;
+  padding: 20px 0;
+  transition: background 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* State added by JS when user scrolls down */
+.navbar.scrolled {
+  background: #1a1a2e;
+  padding: 10px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #bfbfdc;
+  transition: color 0.3s ease;
+}
+.navbar.scrolled .logo { color: #ffffff; }
+.logo span { color: #e94560; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #bfbfdc;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.navbar.scrolled .nav-links a { color: #ffffff; }
+
+/* Hover: color + underline style change */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #e94560;
+  color: #e94560;
+  transition: width 0.3s ease;
+}
+.nav-links a:hover {
+  color: #e94560;
+}
+.nav-links a:hover::after {
+  position: absolute;
+  width: 100%;
+}
+
+hr {
+  border: none;               /* Removes the default ugly gray border */
+  height: 3px;                /* Makes the line thicker */
+  background-color: #333;     /* Changes the line color (e.g., dark gray) */
+  width: 100%;                /* Shortens the line (can use px or %) */
+  margin: 20px auto;          /* Adds space above/below and centers it */
+}
+
+/* ===== MOBILE MENU TOGGLE ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+.menu-toggle span {
+  width: 26px;
+  height: 3px;
+  background: #1a1a2e;
+  transition: background 0.3s ease;
+}
+.navbar.scrolled .menu-toggle span { background: #ffffff; }
+
+/* ===== SECTIONS (placeholder content for scroll testing) ===== */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 24px;
+  background: #f5f5f7;
+}
+#home { 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.612), rgba(0, 0, 0, 0.612)), url('images.webp');
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.hero {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #fff;
+}
+.hero h1 { font-size: 2.6rem; margin-bottom: 16px; }
+.hero h1 span { color: #e94560; }
+.hero p { max-width: 500px; color: #cccccc; }
+
+.section h2 { font-size: 2rem; margin-bottom: 12px; }
+.section p { max-width: 500px; }
+
+/* --- About Section Styles --- */
+.about-section {
+    padding: 80px 10%;
+    background-color: #fcfcfc; /* Light, clean background for the section */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+/* Text Content Column */
+.about-content {
+    flex: 1;
+}
+
+.about-subtitle {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #b5835a; /* Sophisticated accent color (like warm bronze/gold) */
+    font-weight: 600;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    color: #222;
+    margin: 10px 0 15px 0;
+    line-height: 1.2;
+}
+
+/* Custom mini-divider line under the header */
+.about-divider {
+    border: none;
+    height: 3px;
+    background-color: #b5835a;
+    width: 400px;
+    margin: 0 0 25px 0; /* Left-aligned */
+}
+
+.about-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+/* Image Column with Dimmed Background Trick */
+.about-image-box {
+    flex: 1;
+    width: 100%;
+}
+
+.about-image {
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    
+    /* Layered linear gradient to dim the background image slightly (30% dark) */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                      url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000'); 
+    
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+/* --- Products/Projects Section Styles --- */
+.products-section {
+    padding: 100px 5%;
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.products-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.products-subtitle {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #b5835a; /* Matching your bronze/gold accent color */
+    font-weight: 600;
+}
+
+.products-header h2 {
+    font-size: 36px;
+    color: #222;
+    margin: 10px 0 15px 0;
+}
+
+/* Centered divider line under the heading */
+.products-divider {
+    border: none;
+    height: 3px;
+    background-color: #b5835a;
+    width: 60px;
+    margin: 0 auto; /* Centers the horizontal rule */
+}
+
+/* The Responsive Grid Layout */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Individual Project Cards */
+.product-card {
+    background: #fdfdfd;
+    border-radius: 8px;
+    overflow: hidden; /* Keeps the zoom effect contained inside the card borders */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Image Wrapper for the Hover Animation & Tag Placement */
+.product-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images scale without distorting stretch lines */
+    transition: transform 0.5s ease;
+}
+
+/* Overlay Tag on Top of Image */
+.product-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(34, 34, 34, 0.85); /* Slightly translucent dark tag */
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 4px;
+}
+
+/* Content block under the image */
+.product-info {
+    padding: 25px;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    color: #222;
+    margin: 0 0 10px 0;
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Stacks text on top of the image on mobile */
+        gap: 35px;
+    }
+    
+    .about-content h2 {
+        font-size: 28px;
+    }
+    
+    .about-image {
+        height: 300px; /* Reduces image height slightly on smaller screens */
+    }
+}
+
+/* --- Contact Section Styles (Single Container) --- */
+.contact-section {
+    padding: 80px 10%;
+    background-color: #fafafa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.contact-divider {
+    border: none;
+    height: 3px;
+    background-color: #b5835a;
+    width: 60px;
+    margin: 0 auto;
+}
+
+/* The single unified card container */
+.contact-single-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+/* Layout for each individual details line inside the container */
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Adds a subtle separating line between rows, except the last one */
+.contact-row:not(:last-child) {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-icon {
+    font-size: 26px;
+    background-color: #fcf6f0; /* Soft accent background tint */
+    padding: 12px;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-row h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 2px;
+}
+
+.contact-row p, 
+.contact-row a {
+    font-size: 16px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-row a:hover {
+    color: #b5835a;
+}
+
+/* Responsive optimization for small phone screens */
+@media (max-width: 480px) {
+    .contact-single-card {
+        padding: 20px;
+    }
+    .contact-row {
+        gap: 15px;
+    }
+    .contact-row p, 
+    .contact-row a {
+        font-size: 14px;
+    }
+}
+
+/* Responsive Mobile Spacing Adjustments */
+@media (max-width: 768px) {
+    .products-section {
+        padding: 60px 5%;
+    }
+    .products-header h2 {
+        font-size: 28px;
+    }
+}
+/* ===== RESPONSIVE: MOBILE ===== */
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    max-width: 300px;
+    background: #1a1a2e;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    transition: right 0.4s ease;
+  }
+  .nav-links.open { right: 0; }
+  .nav-links a { color: #ffffff; }
+
+  .hero h1 { font-size: 2rem; }
+}

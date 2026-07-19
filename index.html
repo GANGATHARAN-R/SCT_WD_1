@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 01 — Responsive Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== FIXED NAVIGATION MENU ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">GT <span>Designs</span></a>
+
+      <!-- Hamburger for mobile -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== HERO / HOME SECTION ===== -->
+  <section id="home" class="section hero">
+    <p>This is our <span style="color: red;">INTERIOR DESIGNING</span> Company</p>
+    <h1>Build Something <span>Responsive</span></h1>
+    <p>Scroll down and notice how the navigation bar changes style — that's the core requirement of Task 01.</p>
+  </section>
+
+  <section id="about" class="section">
+
+    <section class="about-section" id="about">
+      <div class="about-container">
+        <!-- Text Content Side -->
+        <div class="about-content">
+          <span class="about-subtitle">Who We Are</span>
+          <h2>Elevating Spaces, Inspiring Lifestyles</h2>
+          <hr class="about-divider">
+          <p>At <strong>GT Designs</strong>, we believe that a well-designed space has the power to transform how you
+            live, work, and thrive. We blend functional architecture with sophisticated aesthetics to create bespoke
+            interiors that reflect your unique story.</p>
+          <p>From conceptual sketches to the final reveal, our dedicated team handles every detail with precision,
+            creativity, and passion. Whether it's a modern residential haven or a dynamic commercial space, we bring
+            your vision to life.</p>
+        </div>
+
+        <!-- Visual/Image Side -->
+        <div class="about-image-box">
+          <!-- This container uses the CSS background trick we set up -->
+          <div class="about-image"></div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <hr>
+
+  <section id="services" class="section">
+    <section class="products-section" id="projects">
+      <div class="products-header">
+        <span class="products-subtitle">Our Projects</span>
+        <h2>Featured Designs</h2>
+        <hr class="products-divider">
+      </div>
+
+      <div class="products-grid">
+        <!-- Project Card 1 -->
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=600"
+              alt="Modern Minimalist Living Room" class="product-img">
+            <span class="product-tag">Residential</span>
+          </div>
+          <div class="product-info">
+            <h3>Modern Minimalist Oasis</h3>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=600"
+              alt="Contemporary Executive Office" class="product-img">
+            <span class="product-tag">Commercial</span>
+          </div>
+          <div class="product-info">
+            <h3>The Zenith Workspace</h3>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600"
+              alt="Luxury Culinary Kitchen" class="product-img">
+            <span class="product-tag">Kitchen</span>
+          </div>
+          <div class="product-info">
+            <h3>Epicurean Slate Kitchen</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <hr>
+
+
+  <section id="contact" class="section">
+    <section class="contact-section" id="contact">
+      <div class="contact-header">
+        <h3>Get In Touch</h3>
+        <h2>Connect With Us</h2>
+        <hr class="contact-divider">
+      </div>
+
+      <!-- All info combined into one simple container -->
+      <div class="contact-single-card">
+
+        <!-- Mobile Row -->
+        <div class="contact-row">
+          <span class="contact-icon">📞</span>
+
+          <h3>Call Us</h3>
+          <p>+91 7368492793</p>
+
+        </div>
+
+        <!-- Email Row -->
+        <div class="contact-row">
+          <span class="contact-icon">✉️</span>
+
+          <h3>Email Us</h3>
+          <p>gtdesigns100@gmail.com</p>
+
+        </div>
+
+        <!-- Location Row -->
+        <div class="contact-row">
+          <span class="contact-icon">📍</span>
+
+          <h3>Our Studio</h3>
+          <p>123 park block , chennai , tamilnadu 600002</p>
+
+        </div>
+
+      </div>
+    </section>
+  </section>
+  <hr>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
