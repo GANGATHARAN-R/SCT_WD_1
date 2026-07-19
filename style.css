@@ -128,8 +128,7 @@ hr {
   background: linear-gradient(135deg, #1a1a2e, #16213e);
   color: #fff;
 }
-.hero h1 { font-size: 2.6rem; margin-bottom: 16px; }
-.hero h1 span { color: #e94560; }
+
 .hero p { max-width: 500px; color: #cccccc; }
 
 .section h2 { font-size: 2rem; margin-bottom: 12px; }
